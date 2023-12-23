@@ -1,5 +1,4 @@
 import './style.css'
-import * as ex from 'excalibur'
 import { resources } from 'vite-plugin-excalibur-resources/runtime'
 import hot from 'vite-plugin-excalibur-hmr/hot'
 
