@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   excalibur:
-    specifier: ^0.28.4
-    version: 0.28.4
+    specifier: ^0.28.7
+    version: 0.28.7
   prettier:
     specifier: ^3.1.1
     version: 3.1.1
@@ -22,10 +22,10 @@ devDependencies:
     version: 5.0.10
   vite-plugin-excalibur-hmr:
     specifier: ^0.0.1
-    version: 0.0.1(excalibur@0.28.4)(vite@5.0.10)
+    version: 0.0.1(excalibur@0.28.7)(vite@5.0.10)
   vite-plugin-excalibur-resources:
     specifier: ^0.1.5
-    version: 0.1.5(excalibur@0.28.4)
+    version: 0.1.5(excalibur@0.28.7)
 
 packages:
 
@@ -267,23 +267,23 @@ packages:
     dev: true
     optional: true
 
-  /@excaliburjs/plugin-aseprite@0.27.0(excalibur@0.28.4):
+  /@excaliburjs/plugin-aseprite@0.27.0(excalibur@0.28.7):
     resolution: {integrity: sha512-eEX2r5qsDBbrRlGJnxHIL9noEA+cQwkeYsQ7ZrNS7BmF3S7U3YBiiLTIjG1ZZ9YEg2hKaj1JtoOe23dvUrNgow==}
     requiresBuild: true
     peerDependencies:
       excalibur: 0.27.0
     dependencies:
-      excalibur: 0.28.4
+      excalibur: 0.28.7
     dev: true
     optional: true
 
-  /@excaliburjs/plugin-tiled@0.27.0(excalibur@0.28.4):
+  /@excaliburjs/plugin-tiled@0.27.0(excalibur@0.28.7):
     resolution: {integrity: sha512-69tcE3r7ye2VjHqsv9UztQCQK3jZP/puzA2AqYoFDQuFenMlx4/3YynlkwGlm45l4OF3QTbd2QZ1rAlqvUROLw==}
     requiresBuild: true
     peerDependencies:
       excalibur: 0.27.0
     dependencies:
-      excalibur: 0.28.4
+      excalibur: 0.28.7
       fast-xml-parser: 3.21.1
       pako: 1.0.11
       zstddec: 0.0.2
@@ -602,8 +602,8 @@ packages:
       '@types/estree': 1.0.5
     dev: true
 
-  /excalibur@0.28.4:
-    resolution: {integrity: sha512-Inr9Sb6Hvn5HjQ5YwDfwZEkaeGH1y+LME5zTSWttNa7RnYo/1nIihPQFh6vy9KIzFD/caHFW5QS+pVj9ppCs9A==}
+  /excalibur@0.28.7:
+    resolution: {integrity: sha512-ws4hT4xE4+EaICdxHvI9pZV3L+RdtJK+H36KUfCoYQK3uaZNlnIO4JoeqMvKYbcCOZybKzW73W9+DyIjAiBvnA==}
     dependencies:
       core-js: 3.33.3
     dev: true
@@ -1096,17 +1096,17 @@ packages:
       which-typed-array: 1.1.13
     dev: true
 
-  /vite-plugin-excalibur-hmr@0.0.1(excalibur@0.28.4)(vite@5.0.10):
+  /vite-plugin-excalibur-hmr@0.0.1(excalibur@0.28.7)(vite@5.0.10):
     resolution: {integrity: sha512-6o900wTbsckqqP1ay8+ZZOicqx1OEF9f/R8HyQn3COlNnhcUy/uFdNjg3ANjBrPwf2h+nDIe5uH3eiZykPtyBg==}
     peerDependencies:
       excalibur: ^0.28.3
       vite: '>=4'
     dependencies:
-      excalibur: 0.28.4
+      excalibur: 0.28.7
       vite: 5.0.10
     dev: true
 
-  /vite-plugin-excalibur-resources@0.1.5(excalibur@0.28.4):
+  /vite-plugin-excalibur-resources@0.1.5(excalibur@0.28.7):
     resolution: {integrity: sha512-CEGRhkiWjdcicpHw81u2/NztlJLG6j6H9gTox9TWar7NHuVT/pRrl6qe3JFLBey2uFSkqB/DwrInCRUMFOU/LA==}
     hasBin: true
     peerDependencies:
@@ -1114,13 +1114,13 @@ packages:
     dependencies:
       '@babel/parser': 7.23.6
       dedent: 0.7.0
-      excalibur: 0.28.4
+      excalibur: 0.28.7
       fast-glob: 3.3.2
       query-string: 8.1.0
       recast: 0.22.0
     optionalDependencies:
-      '@excaliburjs/plugin-aseprite': 0.27.0(excalibur@0.28.4)
-      '@excaliburjs/plugin-tiled': 0.27.0(excalibur@0.28.4)
+      '@excaliburjs/plugin-aseprite': 0.27.0(excalibur@0.28.7)
+      '@excaliburjs/plugin-tiled': 0.27.0(excalibur@0.28.7)
     dev: true
 
   /vite@5.0.10:

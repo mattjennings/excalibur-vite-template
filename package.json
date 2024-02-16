@@ -16,6 +16,6 @@
     "vite": "^5.0.8",
     "vite-plugin-excalibur-hmr": "^0.0.1",
     "vite-plugin-excalibur-resources": "^0.1.5",
-    "excalibur": "^0.28.4"
+    "excalibur": "^0.28.7"
   }
 }
