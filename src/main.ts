@@ -1,18 +1,9 @@
 import './style.css'
 import { resources } from 'vite-plugin-excalibur-resources/runtime'
 import hot from 'vite-plugin-excalibur-hmr/hot'
+import { DevLoader } from './loaders/dev'
 
 const INITIAL_SCENE = 'level1'
-
-const game = new ex.Engine({
-  width: 800,
-  height: 600,
-  displayMode: ex.DisplayMode.FitScreen,
-})
-
-if (import.meta.env.DEV) {
-  hot(game)
-}
 
 // load all scenes from ./scenes directory
 const scenes = import.meta.glob('./scenes/**/*.ts', { eager: true }) as Record<
@@ -20,14 +11,37 @@ const scenes = import.meta.glob('./scenes/**/*.ts', { eager: true }) as Record<
   { default: typeof ex.Scene }
 >
 
-for (const [key, scene] of Object.entries(scenes)) {
-  const name = key.split('/scenes/')[1].split('.ts')[0]
-  game.addScene(name, new scene.default())
+const loader = import.meta.env.DEV
+  ? new DevLoader(resources)
+  : new ex.Loader(resources)
+
+const game = new ex.Engine<string>({
+  width: 800,
+  height: 600,
+  displayMode: ex.DisplayMode.FitScreen,
+  pixelArt: true,
+  scenes: Object.entries(scenes).reduce((acc, [key, scene]) => {
+    const name = key.split('/scenes/')[1].split('.ts')[0]
+
+    return {
+      ...acc,
+      [name]: {
+        scene: scene.default,
+        loader,
+      },
+    }
+  }, {}),
+})
+
+if (import.meta.env.DEV) {
+  hot(game)
 }
 
-// load resources
-const loader = new ex.Loader(resources)
-
-game.start(loader).then(() => {
-  game.goToScene(INITIAL_SCENE)
+game.start(INITIAL_SCENE, {
+  loader,
+  inTransition: new ex.FadeInOut({
+    duration: 200,
+    direction: 'in',
+    color: ex.Color.ExcaliburBlue,
+  }),
 })

@@ -4,6 +4,10 @@ import hmr from 'vite-plugin-excalibur-hmr'
 import resources from 'vite-plugin-excalibur-resources'
 
 export default defineConfig({
+  optimizeDeps: {
+    // exclude: ['vite-plugin-excalibur-hmr'],
+    include: ['vite-plugin-excalibur-hmr'],
+  },
   resolve: {
     alias: {
       '@': '/src',
