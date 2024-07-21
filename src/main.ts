@@ -1,11 +1,10 @@
 import './style.css'
 import { resources } from 'vite-plugin-excalibur-resources/runtime'
-import hot from 'vite-plugin-excalibur-hmr/hot'
 import { DevLoader } from './loaders/dev'
 
 const INITIAL_SCENE = 'level1'
 
-// load all scenes from ./scenes directory
+// load all scenes from ./scenes directory, using filename as scene name
 const scenes = import.meta.glob('./scenes/**/*.ts', { eager: true }) as Record<
   string,
   { default: typeof ex.Scene }
@@ -32,10 +31,6 @@ const game = new ex.Engine<string>({
     }
   }, {}),
 })
-
-if (import.meta.env.DEV) {
-  hot(game)
-}
 
 game.start(INITIAL_SCENE, {
   loader,

@@ -1,12 +1,11 @@
 import { defineConfig } from 'vite'
 import { default as AutoImport } from 'unplugin-auto-import/vite'
-import hmr from 'vite-plugin-excalibur-hmr'
 import resources from 'vite-plugin-excalibur-resources'
 
 export default defineConfig({
   optimizeDeps: {
-    // exclude: ['vite-plugin-excalibur-hmr'],
-    include: ['vite-plugin-excalibur-hmr'],
+    // exclude: ['excalibur'],
+    include: ['excalibur'],
   },
   resolve: {
     alias: {
@@ -24,7 +23,6 @@ export default defineConfig({
       ],
       dts: './src/ex.d.ts',
     }),
-    hmr(),
     resources(),
   ],
 })
