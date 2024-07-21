@@ -15,6 +15,7 @@ export default defineConfig({
   plugins: [
     // automatically expose global 'ex' variable that will compile into
     // import { XYZ } from 'excalibur' for tree shaking
+    // (using ex.XYZ as types seems to break in typescript 5.5, make sure to use 5.4)
     AutoImport({
       imports: [
         {
