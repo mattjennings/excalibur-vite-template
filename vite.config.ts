@@ -4,10 +4,12 @@ import resources from 'vite-plugin-excalibur-resources'
 
 export default defineConfig({
   optimizeDeps: {
-    // exclude: ['excalibur'],
+    // not necessary but helps when linking to local excalibur versions
     include: ['excalibur'],
   },
   resolve: {
+    // not necessary but helps when linking to local excalibur versions
+    dedupe: ['excalibur'],
     alias: {
       '@': '/src',
     },
@@ -15,14 +17,15 @@ export default defineConfig({
   plugins: [
     // automatically expose global 'ex' variable that will compile into
     // import { XYZ } from 'excalibur' for tree shaking
-    // (using ex.XYZ as types seems to break in typescript 5.5, make sure to use 5.4)
     AutoImport({
+      // we manually type it in ./src/ex.d.ts,
+      // feel free to enable if you're adding other libraries to auto import
+      dts: false,
       imports: [
         {
           excalibur: [['*', 'ex']],
         },
       ],
-      dts: './src/ex.d.ts',
     }),
     resources(),
   ],
